@@ -1,0 +1,9 @@
+srun: error: Task launch for 462169.0 failed on node oberon136: Communication connection failure
+srun: error: Application launch failed: Communication connection failure
+slurmd[oberon134]: *** JOB 462169 CANCELLED AT 2022-10-07T11:11:54 ***
+[mpiexec@oberon134] HYDU_sock_write (../../utils/sock/sock.c:417): write error (Bad file descriptor)
+[mpiexec@oberon134] HYD_pmcd_pmiserv_send_signal (../../pm/pmiserv/pmiserv_cb.c:252): unable to write data to proxy
+[mpiexec@oberon134] ui_cmd_cb (../../pm/pmiserv/pmiserv_pmci.c:174): unable to send signal downstream
+[mpiexec@oberon134] HYDT_dmxu_poll_wait_for_event (../../tools/demux/demux_poll.c:76): callback returned error status
+[mpiexec@oberon134] HYD_pmci_wait_for_completion (../../pm/pmiserv/pmiserv_pmci.c:500): error waiting for event
+[mpiexec@oberon134] main (../../ui/mpich/mpiexec.c:1125): process manager error waiting for completion
