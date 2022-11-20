@@ -1,0 +1,62 @@
+&control
+    calculation = 'relax'
+    restart_mode = 'from_scratch'
+    prefix = 'Ptbulk'
+    tstress = .true.
+    tprnfor = .true.
+    pseudo_dir = './pseudo/'
+    outdir = './'
+    etot_conv_thr=1.0d-7
+    forc_conv_thr=1.0d-6
+/
+&system
+    ibrav = 0
+    celldm(1) = 7.57 !Convergence value (/BEEF-vdW/BULK/a_lattice_convergence)
+    nat = 12
+    ntyp = 1
+    ecutwfc = 110.0
+    input_dft='BEEF-vdW'
+    occupations='smearing'
+    smearing='gaussian'
+    degauss=0.02
+/
+&electrons
+    diagonalization = 'cg'
+    electron_maxstep = 1000
+    mixing_mode = 'plain'
+    mixing_beta = 0.7
+    conv_thr = 1.0d-8
+/
+&ions
+    ion_dynamics='bfgs'
+/
+&cell
+    cell_dynamics='bfgs'
+    cell_dofree='xy'
+/
+
+ATOMIC_SPECIES
+    Pt 195.078 Pt.pbe-n-rrkjus_psl.1.0.0.UPF
+
+CELL_PARAMETERS {alat}
+    1.0606601700000000  -0.612372440000000  0.0000000000000000
+    1.0606601700000000  0.6123724400000000  0.0000000000000000
+    0.0000000000000000  0.0000000000000000  5.0000000000000000
+
+ATOMIC_POSITIONS (crystal)
+Pt            0.0000000000        0.0000000000        0.0500000000    0 0 0
+Pt            0.3333333333        0.3333333333        0.0500000000    0 0 0
+Pt            0.6666666667        0.6666666667        0.0500000000    0 0 0
+Pt            0.6666753752        0.3333246248        0.1662899891    1 1 1
+Pt            0.0000000000        0.6666753752        0.1662899891    1 1 1
+Pt            0.3333246248        0.0000000000        0.1662899891    1 1 1
+Pt            0.0000000000        0.3333338020        0.2807684695    1 1 1
+Pt            0.3333338020        0.6666661980        0.2807684695    1 1 1
+Pt            0.6666661980        0.0000000000        0.2807684695    1 1 1
+Pt            0.0000000000        0.0000000000        0.3970109865    1 1 1
+Pt            0.3333333333        0.3333333333        0.3970110355    1 1 1
+Pt            0.6666666667        0.6666666667        0.3970110355    1 1 1
+
+
+K_POINTS {automatic}
+10 10 1 0 0 0
